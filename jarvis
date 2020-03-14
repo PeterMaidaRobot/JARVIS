@@ -1,1 +1,37 @@
-echo "Hello Sir"
+#!/bin/bash
+
+
+main () {
+    echo Hello Sir.
+    # output the given command arguments or "do nothing"
+    if [ $# -eq 0 ]
+    then
+        echo I will do nothing.
+        return
+    else
+        echo I will $*.
+    fi
+    echo "Commands run: "
+
+
+    # "jarvis open README.md with atom" (with nano, with vim)
+    # "jarvis open README.md" (with atom default editor)
+
+    if [ $# -ge 2 ] && [ $1 = "open" ]
+    then
+        if [ $# -ge 4 ] && [ $3 = "with" ]
+        then
+            echo $4 $2
+            $4 $2
+        else
+            echo atom $2
+            atom $2
+        fi
+    else
+        echo Command not found.
+    fi
+}
+
+
+# Run JARVIS with the given arguments
+main $@

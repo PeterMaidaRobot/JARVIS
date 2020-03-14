@@ -7,8 +7,31 @@
 - Switch to the directory and change the executable permissions with "cd ~/Developer/JARVIS/jarvis", or wherever the repository path is, and change permissions with "chmod +x jarvis".
 
 ### Current Status
-- "Hello Sir" printed upon running the jarvis command
+- To run JARVIS. "Hello Sir" will be printed upon running the command followed by "I will do nothing" if no command arguments are given and "I will do _" with the inputted command arguments.
+```
+jarvis
+```
+or
+```
+jarvis arg1 arg2 arg3 ...
+```
+- To open a file with filename "filename" with the default editor atom.
+```
+jarvis open filename
+```
+- To open a file with filename "filename" with the editor "editor".
+```
+jarvis open filename with editor
+```
 
 
 #### Links
 https://www.youtube.com/watch?v=0liXeoADU6A&t=46s
+
+https://superuser.com/questions/105375/bash-spaces-in-alias-name
+
+https://www.tutorialspoint.com/unix/unix-basic-operators.htm
+
+https://www.tutorialspoint.com/unix/unix-special-variables.htm
+
+https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
