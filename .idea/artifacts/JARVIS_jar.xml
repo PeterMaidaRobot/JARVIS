@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JARVIS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JARVIS_jar</output-path>
+    <root id="archive" name="JARVIS.jar">
+      <element id="module-output" name="JARVIS" />
+    </root>
+  </artifact>
+</component>
