@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649f22b5-764b-4e9f-993f-f1b466d021da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/jarvis" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/jarvis-compile.cpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/jarvis-docker" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,6 +105,11 @@
             <path>
               <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -253,12 +254,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604788030646</updated>
-      <workItem from="1604788031997" duration="1780000" />
+      <workItem from="1604788031997" duration="1924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1780000" />
+    <option name="totallyTimeSpent" value="1924000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
