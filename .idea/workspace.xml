@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649f22b5-764b-4e9f-993f-f1b466d021da" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/JARVIS.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/JARVIS/HelloWorld.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,15 +23,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HelloWorld.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/HelloWorld.java">
+      <file leaf-file-name="JARVIS.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JARVIS.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <element signature="e#69#70#0" expanded="true" />
-                <element signature="e#118#119#0" expanded="true" />
+                <element signature="e#65#66#0" expanded="true" />
+                <element signature="e#112#113#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-62">
+                <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jarvis" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jarvis">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,6 +87,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/JARVIS.java" />
       </list>
     </option>
   </component>
@@ -105,6 +133,24 @@
             <path>
               <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JARVIS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="JARVIS_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JARVIS" type="b2602c69:ProjectViewProjectNode" />
@@ -254,12 +300,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604788030646</updated>
-      <workItem from="1604788031997" duration="1924000" />
+      <workItem from="1604788031997" duration="3038000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1924000" />
+    <option name="totallyTimeSpent" value="3038000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,13 +363,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/HelloWorld.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-62">
+            <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jarvis">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JARVIS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#69#70#0" expanded="true" />
-            <element signature="e#118#119#0" expanded="true" />
+            <element signature="e#65#66#0" expanded="true" />
+            <element signature="e#112#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
