@@ -35,3 +35,14 @@ https://www.tutorialspoint.com/unix/unix-basic-operators.htm
 https://www.tutorialspoint.com/unix/unix-special-variables.htm
 
 https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
+
+
+
+### The environment variables for Twilio
+
+Find your Account Sid and Token at twilio.com/console
+and set the environment variables. See http://twil.io/secure
+
+echo "export TWILIO_ACCOUNT_SID='xxxx'" > .env
+echo "export TWILIO_AUTH_TOKEN='yyyy'" >> .env
+source ./.env
