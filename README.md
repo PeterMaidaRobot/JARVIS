@@ -43,23 +43,33 @@ https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
 Find your Account Sid and Token at twilio.com/console
 and set the environment variables. See http://twil.io/secure
 
+```
 echo "export TWILIO_ACCOUNT_SID='xxxx'" > .env
 echo "export TWILIO_AUTH_TOKEN='yyyy'" >> .env
 source ./.env
+```
 
 
 ### Setting up Twilio
 First cd to the JARVIS directory. Then,
+```
 ./ngrok http 4567
+```
 
 because spark uses port 4567.
 
 Then edit the Messaging webhook at:
+
 https://www.twilio.com/console/phone-numbers/PNc367aae44831dcf2326b0f490e8403a3
+
 to have the same url and a /JARVIS suffix.
 
 This can all be tested by navigating to the webpage, i.e.
+
 http://7d9997dc3177.ngrok.io/JARVIS
+
 which is the same as
+
 http://localhost:4567/JARVIS
+
 because of the ngrok port forwarding.
