@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 
 public class OpenCommand implements ICommand {
 
-    String commandText;
-    String[] commandWords;
+    private final String commandText;
+    private final String[] commandWords;
 
     public OpenCommand(String commandText) {
         this.commandText = commandText;

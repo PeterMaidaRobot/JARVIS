@@ -3,15 +3,6 @@ package JARVIS;
 import Command.*;
 import Input.*;
 
-// Java program to demonstrate BufferedReader
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-
-// Install the Java helper library from twilio.com/docs/java/install
-import com.twilio.Twilio;
-import com.twilio.rest.api.v2010.account.Message;
 
 
 public class JarvisSingleton {
@@ -21,9 +12,6 @@ public class JarvisSingleton {
 
     SmsListener smsListener = new SmsListener();
     TextListener textListener = new TextListener();
-
-
-
 
 
     // make the constructor private so that this class cannot be instantiated
@@ -40,11 +28,14 @@ public class JarvisSingleton {
     public void run() {
         System.out.println("Starting JARVIS...");
 
+        // Start listening for command line input
+        textListener.start();
+
         // Start listening for SMS input
         smsListener.start();
 
-        // Start listening for command line input
-        textListener.start();
+        // Start listening for verbal input
+        // TODO implement this listener (CMUSphinx)
 
 
         // Wait for all of the threads to be joined before closing
@@ -59,10 +50,8 @@ public class JarvisSingleton {
         //sendOutputTextMessage("Hi there!");
 
 //        while (true) {
-//            // TODO break into, threads getText getSpeech getTextMessage that spin off things
 //
 //            String inputText = getInputText(); // Amazon Lex?
-//            //System.out.println("Input: \n" + inputText);
 //
 //            ICommand inputCommand = getCommand(inputText);
 //            String outputResponse = inputCommand.process();
@@ -79,24 +68,7 @@ public class JarvisSingleton {
         System.out.println("Closing JARVIS...");
     }
 
-    /*
-        getCommand() - determine which Command object the commandText belongs to
-     */
-    private ICommand getCommand(String commandText) {
-        commandText = commandText.toLowerCase();
 
-        if (commandText.contains("hi") ||
-            commandText.contains("hello") ||
-            commandText.contains("hey")) {
-            return new GreetingCommand(commandText);
-        } else if (commandText.contains("shutdown")) {
-            return new ShutdownCommand(commandText);
-        } else if (commandText.contains("open")) {
-            return new OpenCommand(commandText);
-        }
-
-        return new UnknownCommand(commandText);
-    }
 
 
 

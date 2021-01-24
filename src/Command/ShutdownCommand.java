@@ -2,8 +2,8 @@ package Command;
 
 public class ShutdownCommand implements ICommand {
 
-    String commandText;
-    String[] commandWords;
+    private final String commandText;
+    private final String[] commandWords;
 
     public ShutdownCommand(String commandText) {
         this.commandText = commandText;
@@ -19,6 +19,7 @@ public class ShutdownCommand implements ICommand {
     }
 
     public String process() {
+        JARVIS.JarvisSingleton.getInstance().stopJarvis();
         return "Shutting down";
     }
 }

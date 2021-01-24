@@ -2,8 +2,8 @@ package Command;
 
 public class UnknownCommand implements ICommand {
 
-    String commandText;
-    String[] commandWords;
+    private final String commandText;
+    private final String[] commandWords;
 
     public UnknownCommand(String commandText) {
         this.commandText = commandText;

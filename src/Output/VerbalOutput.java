@@ -20,13 +20,13 @@ import javazoom.jl.player.advanced.PlaybackEvent;
 import javazoom.jl.player.advanced.PlaybackListener;
 
 
-public class PollyDemo {
+public class VerbalOutput {
 
     private final AmazonPollyClient polly;
     private final Voice voice;
-    private static final String SAMPLE = "Congratulations. You have successfully built this working demo of Amazon Polly.";
+    private Region region = Region.getRegion(Regions.US_EAST_1);
 
-    public PollyDemo(Region region) {
+    public VerbalOutput() {
         // create an Amazon Polly client in a specific region
         polly = new AmazonPollyClient(new DefaultAWSCredentialsProviderChain(),
                 new ClientConfiguration());
@@ -48,32 +48,39 @@ public class PollyDemo {
         return synthRes.getAudioStream();
     }
 
-    public static void runDemo() throws Exception {
-        //create the test class
-        PollyDemo helloWorld = new PollyDemo(Region.getRegion(Regions.US_EAST_1));
-        //get the audio stream
-        InputStream speechStream = helloWorld.synthesize(SAMPLE, OutputFormat.Mp3);
+    public void speak(String message) {
+        try {
+            //get the audio stream
+            InputStream speechStream = synthesize(message, OutputFormat.Mp3);
 
-        //create an MP3 player
-        AdvancedPlayer player = new AdvancedPlayer(speechStream,
-                javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
+            // TODO check if output response is in String->MP3 database
 
-        player.setPlayBackListener(new PlaybackListener() {
-            @Override
-            public void playbackStarted(PlaybackEvent evt) {
-                System.out.println("Playback started");
-                System.out.println(SAMPLE);
-            }
+            //create an MP3 player
+            AdvancedPlayer player = new AdvancedPlayer(speechStream,
+                    javazoom.jl.player.FactoryRegistry.systemRegistry().createAudioDevice());
 
-            @Override
-            public void playbackFinished(PlaybackEvent evt) {
-                System.out.println("Playback finished");
-            }
-        });
+            player.setPlayBackListener(new PlaybackListener() {
+                @Override
+                public void playbackStarted(PlaybackEvent evt) {
+                    System.out.println("Playback started");
+                    System.out.println(message);
+                }
+
+                @Override
+                public void playbackFinished(PlaybackEvent evt) {
+                    System.out.println("Playback finished");
+                }
+            });
 
 
-        // play it!
-        player.play();
+            // play it!
+            player.play();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
+
+
 }

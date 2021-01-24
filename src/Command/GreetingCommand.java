@@ -2,8 +2,8 @@ package Command;
 
 public class GreetingCommand implements ICommand {
 
-    String commandText;
-    String[] commandWords;
+    private final String commandText;
+    private final String[] commandWords;
 
     public GreetingCommand(String commandText) {
         this.commandText = commandText;

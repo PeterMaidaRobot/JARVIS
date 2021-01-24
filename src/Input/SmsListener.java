@@ -1,5 +1,7 @@
 package Input;
 
+import Command.CommandController;
+import Output.OutputMedian;
 import com.twilio.twiml.MessagingResponse;
 import com.twilio.twiml.messaging.Body;
 import com.twilio.twiml.messaging.Message;
@@ -7,22 +9,14 @@ import spark.Spark;
 
 import static spark.Spark.*;
 
-import java.util.Map;
 import java.util.HashMap;
 
 public class SmsListener extends Thread {
+
+    private boolean isValidPhoneNumber = false;
+    private String message = "";
+
     public void run() {
-//        try {
-//            // Displaying the thread that is running
-//            System.out.println ("Thread " +
-//                    Thread.currentThread().getId() +
-//                    " is running");
-//
-//        } catch (Exception e) {
-//            // Throwing an exception
-//            System.out.println ("Exception is caught");
-//        }
-//
 
         // used to test the ngrok tunnel on a webpage
         get("/JARVIS", (req, res) -> {
@@ -33,19 +27,14 @@ public class SmsListener extends Thread {
 
             getHttpRequest(req.body());
 
-            res.type("application/xml");
-            Body body = new Body
-                    .Builder("Hello Sir")
-                    .build();
-            Message sms = new Message
-                    .Builder()
-                    .body(body)
-                    .build();
-            MessagingResponse twiml = new MessagingResponse
-                    .Builder()
-                    .message(sms)
-                    .build();
-            return twiml.toXml();
+            if (isValidPhoneNumber) {
+                OutputMedian outputMedian = new OutputMedian();
+                outputMedian.turnOnSmsOutput();
+                CommandController commandController = new CommandController(message, outputMedian);
+                commandController.start();
+            }
+
+            return null;
         });
     }
 
@@ -53,31 +42,47 @@ public class SmsListener extends Thread {
     /*
     THIS IS NOT!!! THE CORRECT WAY TO DO THIS!!!!!
     HOWEVER IT IS NOT BROKEN AND IT WORKS?!? SOOOOOO....
- */
-    private HashMap<String, String> getHttpRequest(String str) {
-        HashMap<String, String> map = new HashMap<>();
-
+    */
+    private void getHttpRequest(String str) {
         for (String set : str.split("&")) {
 
             String[] pair = set.split("=");
-            String word1 = pair[0];
-            String word2 = pair[1];
-            System.out.println(word1);
-            System.out.println(word2);
+            String key = pair[0];
+            String value = pair[1];
 
-            // only let my phone number send messages to JARVIS!
-            // if we recieved a message from my phone, run the command with it
-            // TODO ****************************************
-            // Then check if the input is the same as my phone number environment variable...
-            // Then make another helper function that translates the %2B and other ascii back into their normal cahracters
+            // Convert the ascii in the body back to it's symbols
+            // i.e.  %2B = +
+            value = convertHexToAscii(value);
+            if (key.equals("From") && value.equals(System.getenv("MY_PHONE_NUMBER"))) {
+                isValidPhoneNumber = true;
+            }
 
+            if (key.equals("Body")) {
+                message = value;
+            }
         }
-
-        return map;
     }
 
     public void stopRunning() {
         Spark.stop(); // Thread also has a stop method
+    }
+
+    /*
+        converts %hex to an ascii and + to a space
+     */
+    private String convertHexToAscii(String value) {
+        //System.out.println("Incoming: " + value);
+        for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(i) == '%') {
+                String hex = value.substring(i+1, i+3);
+                value = value.substring(0, i) + ((char) Integer.parseInt(hex, 16)) + value.substring(i+3);
+                // index i is still in the right spot because we replaced the '%' with the ascii char
+            } else if (value.charAt(i) == '+') {
+                value = value.substring(0, i) + " " + value.substring(i+1);
+            }
+        }
+        //System.out.println("Outgoing: " + value);
+        return value;
     }
 
 }

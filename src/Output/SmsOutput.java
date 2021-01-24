@@ -5,18 +5,16 @@ import com.twilio.rest.api.v2010.account.Message;
 
 public class SmsOutput {
 
-
     // Find your Account Sid and Token at twilio.com/console
     // and set the environment variables. See http://twil.io/secure
-    public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
-    public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
-
+    private static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
+    private static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
 
 
     /*
     sendOutputTextMessage() - sends text from Twilio server
     */
-    private void sendOutputTextMessage(String text) {
+    public void sendOutputTextMessage(String text) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         Message message = Message.creator(
                 new com.twilio.type.PhoneNumber(System.getenv("MY_PHONE_NUMBER")), // to
